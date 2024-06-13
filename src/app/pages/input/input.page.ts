@@ -19,6 +19,7 @@ usuario = {
   onSubmit(formulario: NgForm) {
     if (formulario.valid) {
       console.log('Formulario enviado', this.usuario);
+      // Aquí puedes agregar lógica para manejar el envío del formulario, como llamar a un servicio de autenticación
     } else {
       console.log('Formulario no válido');
     }

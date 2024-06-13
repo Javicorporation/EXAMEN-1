@@ -1,51 +1,51 @@
 <app-header titulo="Input"></app-header>
 
 <ion-content class="ion-padding">
-  <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
-    <ion-list-header>
-      <ion-label>Formulario valido: {{formulario.valid}}</ion-label>
-    </ion-list-header>
-
-    <ion-item>
-      <ion-label>Email:</ion-label>
-      <ion-input 
-        type="email" 
-        placeholder="Email" 
-        name="email" 
-        [(ngModel)]="usuario.email" 
-        #email="ngModel"
-        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
-        required>
-      </ion-input>
-    </ion-item>
-    <div *ngIf="email.invalid && (email.dirty || email.touched)">
-      <ion-text color="danger" *ngIf="email.errors.required">
-        Email es requerido.
-      </ion-text>
-      <ion-text color="danger" *ngIf="email.errors.pattern">
-        Email no es válido.
-      </ion-text>
-    </div>
-
-    <ion-item>
-      <ion-label>Password:</ion-label>
-      <ion-input 
-        type="password" 
-        name="password"
-        [(ngModel)]="usuario.password" 
-        #password="ngModel"
-        required 
-        placeholder="Contraseña">
-      </ion-input>
-    </ion-item>
-    <div *ngIf="password.invalid && (password.dirty || password.touched)">
-      <ion-text color="danger" *ngIf="password.errors.required">
-        Contraseña es requerida.
-      </ion-text>
-    </div>
-
-    <ion-button [disabled]="formulario.invalid" type="submit" expand="block">
-      Login
-    </ion-button>
-  </form>
-</ion-content>
+    <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+      <ion-list-header>
+        <ion-label>Formulario valido: {{formulario.valid}}</ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Email:</ion-label>
+        <ion-input 
+          type="email" 
+          placeholder="Email" 
+          name="email" 
+          [(ngModel)]="usuario.email" 
+          #email="ngModel"
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
+          required>
+        </ion-input>
+      </ion-item>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <ion-text color="danger" *ngIf="email">
+          Email es requerido.
+        </ion-text>
+        <ion-text color="danger" *ngIf="email">
+          Email no es válido.
+        </ion-text>
+      </div>
+  
+      <ion-item>
+        <ion-label>Password:</ion-label>
+        <ion-input 
+          type="password" 
+          name="password"
+          [(ngModel)]="usuario.password" 
+          #password="ngModel"
+          required 
+          placeholder="Contraseña">
+        </ion-input>
+      </ion-item>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <ion-text color="danger" *ngIf="password">
+          Contraseña es requerida.
+        </ion-text>
+      </div>
+  
+      <ion-button [disabled]="formulario.invalid" type="submit" expand="block">
+        Login
+      </ion-button>
+    </form>
+  </ion-content>
