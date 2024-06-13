@@ -15,10 +15,13 @@ usuario = {
   constructor(){}
   ngOnInit() {
   }
-  onSubmit(formulario: NgForm){
-    console.log('submit');
-    console.log(this.usuario);
-    console.log(formulario);
+ 
+  onSubmit(formulario: NgForm) {
+    if (formulario.valid) {
+      console.log('Formulario enviado', this.usuario);
+    } else {
+      console.log('Formulario no válido');
+    }
   }
 
 }
